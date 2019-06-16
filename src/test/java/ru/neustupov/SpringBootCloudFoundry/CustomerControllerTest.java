@@ -33,9 +33,10 @@ public class CustomerControllerTest {
 
   @Before
   public void before() {
-    Stream.of(new Customer(100100L, "Ivan"),
-        new Customer(100001L, "Grey"),
-        new Customer(100002L, "Petr"))
+    Stream.of(
+        new Customer("Ivan"),
+        new Customer("Grey"),
+        new Customer("Petr"))
         .forEach(customer -> customerRepository.save(customer));
   }
 
@@ -49,7 +50,7 @@ public class CustomerControllerTest {
         .andExpect(
             mvcResult -> {
               String contentAsString = mvcResult.getResponse().getContentAsString();
-              String actual = "[{\"id\":1,\"email\":\"Ivan\"},{\"id\":2,\"email\":\"Grey\"},{\"id\":3,\"email\":\"Petr\"}]";
+              String actual = "[{\"id\":100005,\"email\":\"A@ya.ru\"},{\"id\":100006,\"email\":\"B@ya.ru\"},{\"id\":100007,\"email\":\"Ivan\"},{\"id\":100008,\"email\":\"Grey\"},{\"id\":100009,\"email\":\"Petr\"}]";
               JSONAssert.assertEquals(contentAsString, actual, JSONCompareMode.LENIENT);
             }
         );

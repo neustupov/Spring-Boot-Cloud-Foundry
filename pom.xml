@@ -8,10 +8,13 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/>
 	</parent>
+
 	<groupId>ru.neustupov</groupId>
 	<artifactId>Spring-Boot-Cloud-Foundry</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Spring-Boot-Cloud-Foundry</name>
+
+	<packaging>jar</packaging>
 
 	<properties>
 		<java.version>1.8</java.version>
